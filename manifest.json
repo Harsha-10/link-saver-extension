@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Link Saver",
     "version": "1.0.0",
-    "description": "Save links, customize, and schedule meetings!",
+    "description": "Easily save, manage, and share your links with just a click",
     "icons": {
         "16": "images/16.png",
         "32": "images/32.png",
