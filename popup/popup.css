@@ -1,0 +1,62 @@
+.box{
+    height: 400px;
+    width: 300px;
+    padding:0;
+    margin:0;
+    text-align: center;
+    
+}
+.container {
+    margin-bottom: 5px;
+}
+body{
+    background-color: #fff;
+    margin: 0;
+    box-sizing: border-box;
+}
+.title{
+    font-family: "Passion One", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+    background-color:#e64833;
+    margin-top: 0;
+    padding-top: 10px;
+    font-size:2rem;
+}
+.inputs{
+    margin: 10px
+}
+.input1{
+    width: 60px;
+    margin-left: 1px;
+    padding-left: 6px;
+}
+.input2{
+    width:120px;
+    margin-left: 6px;
+}
+.fbtn{
+    margin-left: 2px;
+    width: 60px;
+}
+.btns {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+}
+.btns button, .btns input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #3498db; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    cursor: pointer;
+    margin:10px;
+}
+.btns button:hover, .btns input[type="submit"]:hover {
+    background-color: #2980b9; /* Hover color */
+}
+.btn{
+    border-radius: 4px;
+}

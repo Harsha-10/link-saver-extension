@@ -1,0 +1,405 @@
+@charset "UTF-8";
+.total {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 300px;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  min-height: 300px;
+  
+}
+.links {
+  flex: 1;
+  overflow-y: auto;
+  padding: 7px;
+  box-sizing: border-box;
+  min-height: 250px;
+  max-height: 250px;   
+  margin-bottom: 0;
+}
+.container {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background-color: #fff;
+  margin: 0;
+  box-sizing: border-box;
+}
+.title {
+  font-family:"Graviola-Regular";
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  color: #fff;
+  background: rgba(230, 72, 51, 1);
+  margin: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 2rem;
+  text-align: center;
+}
+.btns{
+  padding-bottom: 38px;
+}
+.btns {
+  display: flex;
+  gap:3px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+#export{
+  margin-right: 4px;
+}
+
+.btns button,
+.btns input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  flex: 1;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.btns button:hover,
+.btns input[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+.btn {
+  border-radius: 8px;
+  margin: 4px;
+}
+.btns{
+  margin-left: 2px;
+}
+
+.c-checkbox {
+  display: none;
+}
+.c-checkbox:checked + .c-formContainer .c-form {
+  width: 20em;
+}
+#formContainer{
+  margin-bottom: 8px;
+}
+.c-checkbox:checked + .c-formContainer .c-form__toggle {
+  visibility: hidden;
+  transform: scale(0.7);
+}
+.c-checkbox:checked + .c-formContainer .c-form__input,
+.c-checkbox:checked + .c-formContainer .c-form__buttonLabel {
+  transition: 0.2s 0.1s;
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.c-form__toggle::after {
+  transition: opacity 1s ease;
+}
+.c-checkbox:not(:checked) + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before,
+.c-checkbox:checked + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle::before {
+  content: "Added Url!";
+}
+.c-checkbox:not(:checked) + .c-formContainer .c-form__input:required:valid ~ .c-form__toggle {
+  pointer-events: none;
+  cursor: default;
+}
+
+.c-formContainer,
+.c-form,
+.c-form__toggle {
+  width: 10em;
+  height: 3.5em;
+}
+
+.c-formContainer {
+  margin-top: 10px;
+  position: relative;
+  font-weight: 600;
+  bottom:0;
+  
+}
+
+.c-form,
+.c-form__toggle {
+  position: absolute;
+  border-radius: 6.25em;
+  background-color: #ffffff;
+  transition: 0.2s;
+}
+
+.c-form {
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5em;
+  margin-left: 5.5rem;
+  box-sizing: border-box;
+  box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+}
+
+.c-form__toggle {
+  transition: opacity 1s ease;
+  color: #ff7b73;
+  top: 0;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-form__toggle::before {
+  font-size: 1.25em;
+  content: attr(data-title);
+}
+
+.c-form__input,
+.c-form__button {
+  font: inherit;
+  border: 0;
+  outline: 0;
+  border-radius: 5em;
+  box-sizing: border-box;
+}
+
+.c-form__input,
+.c-form__buttonLabel {
+  font-size: 1.25em;
+  visibility: hidden;
+  transform: scale(0.7);
+  transition: 0s;
+}
+
+.c-form__input {
+  color: #2980b9;
+  height: 100%;
+  width: 100%;
+  padding: 0 0.5em;
+}
+.c-form__input::placeholder {
+  color: currentColor;
+}
+.c-form__input:required:valid {
+  color: #ff7b73;
+}
+.c-form__input:required:valid + .c-form__buttonLabel {
+  color: #ffffff;
+}
+.c-form__input:required:valid + .c-form__buttonLabel::before {
+  pointer-events: initial;
+}
+
+.c-form__buttonLabel {
+  color: #fff;
+  height: 100%;
+  width: auto;
+}
+.c-form__buttonLabel::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.c-form__button {
+  color: inherit;
+  padding: 0;
+  height: 100%;
+  width: 3em;
+  background-color: #ff7b73;
+}
+#alert-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  display: none;
+  z-index: 1000;
+}
+
+#alert-container.show {
+  display: block;
+}
+
+.link-item {
+  background-color: #F1F7FC;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+.link-item button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 6px;
+  padding: 0; 
+  width: 24px; 
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.copy-btn{
+  padding: 0 1px;
+  padding-top: 1px;
+}
+.link-item button i {
+  font-size: 1.2em;
+}
+
+.link-item:hover {
+  background-color: #e0e7f1;
+}
+
+
+.link-item a {
+  color: #303234; 
+  text-decoration: none;
+  font-size: 1rem; 
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  flex: 1; 
+}
+
+.link-item a:hover {
+  color: #2980b9; 
+}
+
+.copy-btn {
+  height: 32px;
+  width: 32px;
+}
+.delete-btn{
+  color: #f44e4e;
+}
+.copy-btn{
+  color:#A5ACB9;
+}
+.copy-btn:hover{
+  color: #1E3050;
+}
+.delete-btn:hover{
+  color: #c10b0b;
+}
+.qr-btn{
+  color: #AAADB1;
+}
+.qr-btn:hover{
+  color:#1E3050
+}
+.qr-code {
+  display: none; 
+  margin-top: 10px;
+  text-align: center;
+}
+.link-item a {
+  color: #3498db;
+  text-decoration: none; 
+  font-size: 1rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  max-width: 300px; 
+  display: block; 
+}
+::-webkit-scrollbar {
+  width: 5px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  font-size: 9px;
+  margin-top: 20px;
+}
+
+.shortcut {
+  background-color: #3498db; 
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+.info{
+  border-radius: 8px;
+}
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 70%;
+  padding: 10px;
+  padding-bottom: 0;
+  margin: auto;
+  border-radius: 18px;
+}
+
+.search-bar {
+  width: 100%;
+  padding-right: 2.5em;
+  box-sizing: border-box;
+  height: 35px; 
+  padding-left: 10px;
+  border: none; 
+  border-radius: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  outline: none; 
+}
+.searchIcon {
+  border: none;
+  background: none;
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color:#f44e4e ;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.searchIcon:hover{
+  background-color: rgba(187, 183, 183, 0.1);
+}

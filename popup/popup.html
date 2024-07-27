@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Saver</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules' http://localhost:* http://127.0.0.1:* https://cdn.jsdelivr.net;" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://db.onlinewebfonts.com/c/d075b7853bf904d7d09aaea060ce187e?family=Graviola-Regular" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../lib/toastify.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="total">
+        <h1 class="title">Link Saver</h1>  
+        <div class="search">
+            <input type="text" id="search" class="search-bar" placeholder="Search" value="">
+            <button class="searchIcon" id="icon">
+                <i class="fa-duotone fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+        <div id="qr-code-container" style="display: none;"></div>
+        <div class="links"></div>
+        <div id="alert-container"></div>
+        <div id="formContainer">
+            <input class="c-checkbox" type="checkbox" id="checkbox">
+            <div class="c-formContainer" >
+                <form class="c-form" action="">
+                    <input class="c-form__input" id="email-input" placeholder="URL" type="url">
+                    <label class="c-form__buttonLabel" for="checkbox">
+                        <button class="c-form__button" type="button" id="send-button">Add</button>
+                    </label>
+                    <label class="c-form__toggle" id="add-url" for="checkbox" data-title="Add url"></label>
+                </form>
+            </div>
+        </div>
+        <div class="btns">
+            <button class = "btn" id="add-current-tab">Add current tab</button>
+            <button class = "btn" id="delete">Delete All</button>
+            <button class = "btn" id="export">Export</button>
+        </div>
+        <div class="footer">
+            <p>Press <span class="shortcut">Ctrl+q</span> to open the extension</p>
+        </div>
+    </div>
+</body>
+<script src="../lib/qrcode.min.js"></script>
+<script src="../lib/html-docx.js"></script>
+<script src="../lib/FileSaver.min.js"></script>
+<script src="../lib/toastify.js"></script>
+<script src="../script.js"></script>
+</html>
