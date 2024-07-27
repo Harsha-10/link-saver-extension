@@ -19,19 +19,12 @@
         }
     ],
     "permissions": [
-        "scripting",
         "tabs",
         "storage",
-        "activeTab"
+        "clipboardWrite",
+        "activeTab",
+        "<all_urls>"
     ],
-    "commands": {
-        "trigger_button_click": {
-            "suggested_key": {
-                "default": "Ctrl+B"
-            },
-            "description": "Trigger a button click"
-        }
-    },
     "background": {
         "service_worker": "background.js"
     }
