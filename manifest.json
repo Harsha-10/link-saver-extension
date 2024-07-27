@@ -14,7 +14,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
+            "matches": ["https://www.example.com/*", "http://www.example.com/*"],
             "js": ["script.js"]
         }
     ],
@@ -22,8 +22,7 @@
         "tabs",
         "storage",
         "clipboardWrite",
-        "activeTab",
-        "<all_urls>"
+        "activeTab"
     ],
     "background": {
         "service_worker": "background.js"
