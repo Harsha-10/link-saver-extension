@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Link Saver",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Easily save, manage, and share your links with just a click",
     "icons": {
         "16": "images/16.png",
@@ -22,7 +22,8 @@
         "tabs",
         "storage",
         "clipboardWrite",
-        "activeTab"
+        "activeTab",
+        "contextMenus"
     ],
     "background": {
         "service_worker": "background.js"

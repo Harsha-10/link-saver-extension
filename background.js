@@ -14,3 +14,32 @@ chrome.commands.onCommand.addListener((command) => {
         chrome.action.openPopup();
     }
 });
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.contextMenus.create({
+        id: "saveLink",
+        title: "Save Link",
+        contexts: ["link"]
+    });
+});
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+    if (info.menuItemId === "saveLink") {
+        const url = info.linkUrl;
+        saveLink(url);
+    }
+});
+function saveLink(url) {
+    return new Promise((resolve) => {
+        chrome.storage.local.get(['links'], (result) => {
+            const links = result.links || [];
+            const isDuplicate = links.some(link => link.url === url);
+            if (isDuplicate) {
+                resolve();
+            } else {
+                links.push({ url: url });
+                chrome.storage.local.set({ links: links }, () => {
+                    resolve();
+                });
+            }
+        });
+    });
+}
