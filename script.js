@@ -26,21 +26,24 @@ document.addEventListener('DOMContentLoaded', function () {
     function resetToNotifyMe() {
         checkbox.checked = false;
         emailInput.value = '';
-        sendButton.disabled = true;
     }
 
     function validateUrl() {
-        const urlPattern = /^https?:\/\/.+$/;
-        const url = emailInput.value;
-        sendButton.disabled = !urlPattern.test(url);
+        const urlPattern = /^(https?:\/\/|chrome:\/\/|www\.)[\w.-]+(\.[\w.-]+)*([\/\w .\/?%&=]*)?$/;
+        const isValid = urlPattern.test(url);
+        return isValid;
     }
-
-    emailInput.addEventListener('input', validateUrl);
+    sendButton.addEventListener('click', function () {
+        const url = emailInput.value;
+        if (!validateUrl(url)){
+            showToast("Invalid URL!",'#DC143C');
+        }
+    });
 
     sendButton.addEventListener('click', function () {
         const url = emailInput.value;
         resetToNotifyMe();
-        if (url) {
+        if (validateUrl(url)) {
             saveLink(url).then(() => {
                 renderLinks();
             });
@@ -103,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     showToast("URL already added!",'#DC143C');
                     resolve();
                 } else {
-                    links.push({ url: url });
+                    links.unshift({ url: url });
                     showToast("Added!",'#006400');
                     chrome.storage.local.set({ links: links }, () => {
                         resolve();
