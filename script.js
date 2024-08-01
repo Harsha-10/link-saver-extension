@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         emailInput.value = '';
     }
 
-    function validateUrl() {
+    function validateUrl(url) {
         const urlPattern = /^(https?:\/\/|chrome:\/\/|www\.)[\w.-]+(\.[\w.-]+)*([\/\w .\/?%&=]*)?$/;
         const isValid = urlPattern.test(url);
         return isValid;
