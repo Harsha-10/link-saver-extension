@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Link Saver",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Easily save, manage, and share your links with just a click",
     "icons": {
         "16": "images/16.png",

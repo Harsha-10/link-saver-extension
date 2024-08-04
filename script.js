@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function validateUrl(url) {
-        const urlPattern = /^(https?:\/\/|chrome:\/\/|www\.)[\w.-]+(\.[\w.-]+)*([\/\w .\/?%&=]*)?$/;
+        const urlPattern = /^(https?:\/\/)?([\w\d-]+\.)+[\w-]+(\:\d+)?(\/[\w- ./?%&=:@#]*)?$/;
         const isValid = urlPattern.test(url);
         return isValid;
     }
