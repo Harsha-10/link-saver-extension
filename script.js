@@ -11,6 +11,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const exp = document.getElementById('export');
     const add = document.getElementById('add-url');
     const urlInput = document.getElementById('email-input');
+    const lightModeToggle = document.getElementById('light-mode-toggle');
+    const light = document.querySelector(".light");
+    const dark = document.querySelector(".dark");
+
+    if (localStorage.getItem("mode") === "light") {
+        document.body.classList.add("light-mode");
+        light.style.display = "none";
+        dark.style.display = "block";
+    }
+    lightModeToggle.addEventListener("click", function() {
+        document.body.classList.toggle("light-mode");
+        if (document.body.classList.contains("light-mode")) {
+            light.style.display = "none";
+            dark.style.display = "block";
+            localStorage.setItem("mode", "light");
+        } 
+        else {
+            light.style.display = "block";
+            dark.style.display = "none";
+            localStorage.setItem("mode", "dark");
+        }
+    });
 
     if (add && urlInput) {
         add.click();
