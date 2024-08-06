@@ -15,14 +15,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body class="dark-mode">
     <div class="total">
-        <h1 class="title">Link Saver</h1>  
-        <div class="search">
-            <input type="text" id="search" class="search-bar" placeholder="Search" value="">
-            <button class="searchIcon" id="icon">
-                <i class="fa-duotone fa-solid fa-magnifying-glass"></i>
-            </button>
+        <div class="header">
+            <h1 class="title">Link Saver</h1>  
+        </div>
+        <div class="searchmode">
+            <div class="search">
+                <input type="text" id="search" class="search-bar" placeholder="Search" value="">
+                <button class="searchIcon" id="icon">
+                    <i class="fa-duotone fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="mode">
+                <button class="light-mode-button" id="light-mode-toggle">
+                    <img class="light" src="../images/sun.png" alt="Light Mode">
+                    <img src="../images/night-mode.png" alt="Dark Mode" class="dark" style="display: none;">
+                </button>
+            </div>
         </div>
         <div id="qr-code-container" style="display: none;"></div>
         <div class="links"></div>
